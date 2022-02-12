@@ -7,9 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TT VIT Chennai</title>
     <style>
+        body {
+            display: block;
+        }
+
+        p {
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin: auto;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .github {
+            background-color: #21262d;
+            border: none;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            margin: 0.9rem 0.9rem 0rem 0rem;
+            border-radius: 12px;
+        }
+
         .wrap {
             position: relative;
-            padding: 2% 10% 2% 10%;
+            padding: 1% 10% 0% 10%;
+            margin: auto 0;
         }
 
         .box {
@@ -38,9 +71,22 @@
 </head>
 
 <body>
+    <nav>
+        <a class="github" href="https://github.com/lem0n4id/vitc-timetable-example">Open in GitHub
+        </a>
+    </nav>
+    <h1>VIT Chennai's time table</h1>
+    <!-- 
+        for selected slot -
+        <td class="slot"
+                    bgcolor="#CCFF33">L3-BCHY101P-LO-AB1-102C-ALL</td> 
+        unselected-        
+        <td class="slot"
+                    bgcolor="#f9efa4">L6</td>
+     -->
     <div class="wrap">
         <table id="timeTableStyle"
-            style="border: 2px solid #3c8dbc; text-align: center; font-size: 12px; margin-bottom: 20px;width:100%;">
+            style="border: 2px solid #3c8dbc; text-align: center; font-size: 0.9rem; margin-bottom: 20px;width:100%;">
             <tbody>
                 <!-- theory timings start -->
                 <tr>
@@ -418,6 +464,24 @@
             </tbody>
         </table>
     </div>
+    <script>
+        function deleteElement() {
+            var e = document.querySelector("div");
+            e.innerHTML = "";
+        }
+        if (window.screen.width < 800) {
+            deleteElement()
+
+            const para1 = document.createElement("p");
+            const node = document.createTextNode("This website currently doesn't support mobie view. Please use desktop.");
+            para1.appendChild(node);
+            document.body.appendChild(para1);
+        }
+        // var btn = document.getElementById(
+        // "btn").onclick = function() {
+        //     deleteChild();
+        // }
+    </script>
 </body>
 
 </html>
